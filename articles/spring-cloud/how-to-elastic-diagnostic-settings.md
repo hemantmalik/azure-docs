@@ -51,8 +51,7 @@ To learn more about deploying Elastic on Azure, see [How to deploy and manage El
 Application logs provide critical information and verbose logs about your application's health, performance, and more. In the next sections are some simple queries to help you understand your application's current and past states.
 
 1. In Kibana in the Search bar at top type **Disover**, and click on the result 
-   
-    :::image type="content" source="media/elastic/elastic-discover.png" alt-text="Screenshot of the Azure portal showing the Azure Spring Cloud Apps section." lightbox="media/elastic/elastic-discover.png":::
+   ![Elastic Kibana Discover](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/elastic-discover.png)
 
 2. In **Discover** app select **logs-** index pattern if it's not already selected. 
  
@@ -92,8 +91,6 @@ Kibana allows you to visualize  data with Dasbhoards and a rich ecosystem of vis
 
 
 1. From the available fields list on left in **Disover**, search for log.level in the search box under **logs-** index pattern 
-   
-    :::image type="content" source="media/elastic/elastic-discover.png" alt-text="Screenshot of the Azure portal showing the Azure Spring Cloud Apps section." lightbox="media/elastic/elastic-discover.png":::
 
 2. Click on **log.level** field. From the floating informational panel about **log.level**, click on **Visualize**
 3. From here you can choose to add more data from the left pane, or choose from multiple suggestions how you would like to visualize your data
