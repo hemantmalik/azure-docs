@@ -30,6 +30,7 @@ Using the diagnostics functionality of Azure Spring Cloud, you can analyze logs 
 2. Select **diagnostics settings** option, and then select **Add diagnostics setting**.
 3. Enter a name for the setting, and then choose **Send to partner solution** , select **Elastic** and an Elastic deployment where you want to send the logs.
 4. Select **Save**.
+![Diagnostics Setting](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/elastic-diagnostic-setting.png)
 
 > [!NOTE]
 > 1. There might be a gap of up to 15 minutes between when logs  are emitted and when they appear in your Elastic deployment.
@@ -40,9 +41,13 @@ Using the diagnostics functionality of Azure Spring Cloud, you can analyze logs 
 To learn more about deploying Elastic on Azure, see [How to deploy and manage Elastic on Microsoft Azure](https://www.elastic.co/blog/getting-started-with-the-azure-integration-enhancement).
 
 1. From the Elastic deployment overview page in the Azure portal, open **Kibana**.
-1. In Kibana in the Search bar at top type **Spring Cloud type:dashboard**
-1. Click on the **[Logs Azure] Azure Spring Cloud logs Overview** from the results
-1. You can search on out of box Azure Spring Cloud dashboards by using the queries such as **azure.springcloudlogs.properties.app_name : "visits-service"** 
+![Deployment Overview](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/deployment-overview-azure.png)
+
+3. In Kibana in the Search bar at top type **Spring Cloud type:dashboard**
+![Kibana Search](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/spring-cloud-dashboard-search.png)
+
+5. Click on the **[Logs Azure] Azure Spring Cloud logs Overview** from the results
+6. You can search on out of the box Azure Spring Cloud dashboards by using the queries such as **azure.springcloudlogs.properties.app_name : "visits-service"** 
 
 
 
@@ -54,6 +59,7 @@ Application logs provide critical information and verbose logs about your applic
    ![Elastic Kibana Discover](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/elastic-discover.png)
 
 2. In **Discover** app select **logs-** index pattern if it's not already selected. 
+   ![Discover Index Pattern](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/discover-index-pattern.png)
  
 To learn more about different queries , see [Guide to Kibana Query Language](https://www.elastic.co/guide/en/kibana/current/kuery-query.html).
 
@@ -91,8 +97,11 @@ Kibana allows you to visualize  data with Dasbhoards and a rich ecosystem of vis
 1. From the available fields list on left in **Disover**, search for log.level in the search box under **logs-** index pattern 
 
 2. Click on **log.level** field. From the floating informational panel about **log.level**, click on **Visualize**
-3. From here you can choose to add more data from the left pane, or choose from multiple suggestions how you would like to visualize your data
-   :::image type="content" source="media/elastic/elastic-discover.png" alt-text="Screenshot of the Azure portal showing the Azure Spring Cloud Apps section." lightbox="media/elastic/elastic-discover.png":::
+   ![Discover to Visualize](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/discover-to-visualize.PNG)
+   
+4. From here you can choose to add more data from the left pane, or choose from multiple suggestions how you would like to visualize your data
+   ![Discover to Visualize](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/kibana-lens.PNG)   
+   
 ## Next steps
 
 * [Quickstart: Deploy your first Spring Boot app in Azure Spring Cloud](./quickstart.md)
