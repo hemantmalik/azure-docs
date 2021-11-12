@@ -30,6 +30,7 @@ Using the diagnostics functionality of Azure Spring Cloud, you can analyze logs 
 2. Select **diagnostics settings** option, and then select **Add diagnostics setting**.
 3. Enter a name for the setting, and then choose **Send to partner solution** , select **Elastic** and an Elastic deployment where you want to send the logs.
 4. Select **Save**.
+
 ![Diagnostics Setting](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/elastic-diagnostic-setting.png)
 
 > [!NOTE]
@@ -41,13 +42,17 @@ Using the diagnostics functionality of Azure Spring Cloud, you can analyze logs 
 To learn more about deploying Elastic on Azure, see [How to deploy and manage Elastic on Microsoft Azure](https://www.elastic.co/blog/getting-started-with-the-azure-integration-enhancement).
 
 1. From the Elastic deployment overview page in the Azure portal, open **Kibana**.
+
 ![Deployment Overview](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/deployment-overview-azure.png)
 
 3. In Kibana in the Search bar at top type **Spring Cloud type:dashboard**
+
 ![Kibana Search](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/spring-cloud-dashboard-search.png)
 
 5. Click on the **[Logs Azure] Azure Spring Cloud logs Overview** from the results
-6. You can search on out of the box Azure Spring Cloud dashboards by using the queries such as **azure.springcloudlogs.properties.app_name : "visits-service"** 
+6. You can search on out of the box Azure Spring Cloud dashboards by using the queries such as
+
+   **azure.springcloudlogs.properties.app_name : "visits-service"** 
 
 
 
@@ -56,9 +61,11 @@ To learn more about deploying Elastic on Azure, see [How to deploy and manage El
 Application logs provide critical information and verbose logs about your application's health, performance, and more. In the next sections are some simple queries to help you understand your application's current and past states.
 
 1. In Kibana in the Search bar at top type **Disover**, and click on the result 
+
    ![Elastic Kibana Discover](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/elastic-discover.png)
 
 2. In **Discover** app select **logs-** index pattern if it's not already selected. 
+
    ![Discover Index Pattern](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/discover-index-pattern.png)
  
 To learn more about different queries , see [Guide to Kibana Query Language](https://www.elastic.co/guide/en/kibana/current/kuery-query.html).
