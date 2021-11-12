@@ -64,17 +64,23 @@ Application logs provide critical information and verbose logs about your applic
 To learn more about different queries , see [Guide to Kibana Query Language](https://www.elastic.co/guide/en/kibana/current/kuery-query.html).
 
 
-### Show application logs from Azure Spring Cloud
+### Show all logs from Azure Spring Cloud
 
 To review a list of application logs from Azure Spring Cloud, sorted by time with the most recent logs shown first, run the following query in the **Search** box:
 
 ```azure_log_forwarder.resource_type : "Microsoft.AppPlatform/Spring" ```
 
+### Show specific type logs from Azure Spring Cloud
+
+To review a list of application logs from Azure Spring Cloud, sorted by time with the most recent logs shown first, run the following query in the **Search** box:
+
+```azure_log_forwarder.resource_type : "Microsoft.AppPlatform/Spring" and azure_log_forwarder.category : "ApplicationConsole"  ```
+
 ### Show logs entries containing errors or exceptions
 
 To review unsorted log entries that mention an error or exception, run the following query:
 
-```azure_log_forwarder.resource_type : "Microsoft.AppPlatform/Spring" and (log.level : "ERROR" or log.level : "EXCEPTION") ```
+```azure_log_forwarder.resource_type : "Microsoft.AppPlatform/Spring" and (log.level : "ERROR" or log.level : "EXCEPTION")```
 
 You would notice as you start typing in that Kibana Query Language helps users form queries with autocomplete and suggestions to make it easy for users to gain insights from the logs.
 Use this query to find errors, or modify the query terms to find specific error codes or exceptions.
