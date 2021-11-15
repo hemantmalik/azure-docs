@@ -34,8 +34,8 @@ The following sections use Spring Petclinic service as an example to walk throug
 1. Follow the guide [here](https://github.com/Azure-Samples/spring-petclinic-microservices) to deploy Microservices based Spring Petclinic application to Azure Spring Cloud. Follow this guide until the [Deploy Spring Boot applications and set environment variables](https://github.com/Azure-Samples/spring-petclinic-microservices#deploy-spring-boot-applications-and-set-environment-variables) step.
    
 ### Enable custom persistent storage for  Azure Spring Cloud service
-2. Follow the steps [here ](https://docs.microsoft.com/en-us/azure/spring-cloud/how-to-custom-persistent-storage) to enable your custom persistent storage.
-3. For Step 3 in the above documentation follow the below steps to add persistent storage for Petclinic apps.
+1. Follow the steps [here ](https://docs.microsoft.com/en-us/azure/spring-cloud/how-to-custom-persistent-storage) to enable your custom persistent storage.
+2. For Step 3 in the above documentation follow the below steps to add persistent storage for Petclinic apps.
    ```bash
    #API_Gateway
    az spring-cloud app append-persistent-storage --persistent-storage-type AzureFileVolume --share-name asc-elastic --mount-path "/elastic/apm/api-gateway" --storage-name "asc-elastic-storage" -n ${API_GATEWAY} -g ${RESOURCE_GROUP} -s ${SPRING_CLOUD_SERVICE}
@@ -58,17 +58,18 @@ The following sections use Spring Petclinic service as an example to walk throug
 1. Before proceeding ahead you would need Elastic APM server connectivity information handy. This assumes you have completed  [Deployment of Elastic on Azure](https://www.elastic.co/blog/getting-started-with-the-azure-integration-enhancement).
 
 2. From Azure Portal, click on the Manage Elastic Cloud Deployment on the Overview blade  of your Elastic Deployment.
-
-![Go to Elastic Cloud ]()
+   
+   ![Go to Elastic Cloud ]()
+   
 3. Under your deployment on Elastic Cloud Console, click on APM & Fleet section to get Elastic APM Server endpoint and secret token
 
-![Elastic Cloud - Get APM Endpoint and token ]()
+   ![Elastic Cloud - Get APM Endpoint and token ]()
 
 4. Once you have the Elastic APM endpoint and secret token, follow the following commands to deploy the applications. Replace the Elastic APM Server URL and Secret Token with your values.
 
 ```bash
 #API_GATEWAY
-az spring-cloud app deploy --name ${API_GATEWAY} \
+az  spring-cloud app deploy --name ${API_GATEWAY} \
        --artifact-path ${API_GATEWAY_JAR} \
         --jvm-options='-Xms2048m -Xmx2048m -Dspring.profiles.active=mysql -javaagent:/elastic/apm/api-gateway/elastic-apm-agent-1.26.0.jar  -Delastic.apm.service_name=API_GATEWAY -Delastic.apm.application_packages=org.springframework.samples.petclinic  -Delastic.apm.server_url=<replace-with-your-Elastic-APM-server-url> -Delastic.apm.secret_token=<replace-with-your-Elastic-APM-secret-token>'
 
