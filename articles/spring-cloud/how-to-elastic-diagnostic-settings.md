@@ -50,7 +50,10 @@ To learn more about deploying Elastic on Azure, see [How to deploy and manage El
 ![Kibana Search](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/spring-cloud-dashboard-search.png)
 
 5. Click on the **[Logs Azure] Azure Spring Cloud logs Overview** from the results
-6. You can search on out of the box Azure Spring Cloud dashboards by using the queries such as
+
+![ASC Dashboard](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/Kibana_Visual.PNG)
+
+7. You can search on out of the box Azure Spring Cloud dashboards by using the queries such as
 
    **azure.springcloudlogs.properties.app_name : "visits-service"** 
 
