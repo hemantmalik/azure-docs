@@ -59,11 +59,11 @@ The following sections use Spring Petclinic service as an example to walk throug
 
 2. From Azure Portal, click on the Manage Elastic Cloud Deployment on the Overview blade  of your Elastic Deployment.
    
-   ![Go to Elastic Cloud ]()
+   ![Go to Elastic Cloud ](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/azure-portal-elastic-deployment-link.png)
    
 3. Under your deployment on Elastic Cloud Console, click on APM & Fleet section to get Elastic APM Server endpoint and secret token
 
-   ![Elastic Cloud - Get APM Endpoint and token ]()
+   ![Elastic Cloud - Get APM Endpoint and token ](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/get-apm-endpoint-token-2.png)
 
 4. Once you have the Elastic APM endpoint and secret token, follow the following commands to deploy the applications. Replace the Elastic APM Server URL and Secret Token with your values.
 
@@ -113,10 +113,10 @@ az spring-cloud app deploy --name ${VISITS_SERVICE} \
 
 1. From the Azure Portal, click on Kibana link from the overview blade of Elastic Deployment to open Kibana. 
    
-   ![Open Kibana from Azure]()
+   ![Open Kibana from Azure](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/get-kibana-link.png)
 
 2. Once Kibana is open, search for APM in the search bar and go to APM.
    
-   ![Open APM in Kibana]()
+   ![Open APM in Kibana](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/go-to-apm-kibana.PNG)
 
 3. 
