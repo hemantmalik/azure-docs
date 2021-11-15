@@ -13,9 +13,9 @@ ms.custom: devx-track-java
 
 This article explains how to use Elastic APM Agent to monitor Spring Boot applications running in Azure Spring Cloud. It involves two steps that this article dives deep into:
 
-1. Adding and enabling custom persistent storage for Azure Spring Cloud service
+1. Mount custom persistent storage with Elastic APM Java agent binary to Azure Spring Cloud service.
 
-3. Uploading Elastic APM Java agent to the storage and made available to the Spring Boot applications.
+3. Activate Elastic APM Java agent for the Azure Spring Cloud applications.
 
 With the Elastic Observability Solution you can achieve unified observability for your Azure Spring Cloud Applications by 
 
