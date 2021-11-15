@@ -123,4 +123,8 @@ az spring-cloud app deploy --name ${VISITS_SERVICE} \
    
    ![Open APM in Kibana](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/go-to-apm-kibana.PNG)
 
-3. 
+3.
+![Kibana APM](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/elastic-apm-customer-service.png)
+![Kibana APM Latency Distribution](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/elastic-apm-customer-service-latency-distribution.png)
+![Kibana APM Machine Learning](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/elastic-apm-customer-service-anomaly.png)
+![Kibana APM JVM Metrics](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/elastic-apm-customer-service-jvm-metrics.png)
