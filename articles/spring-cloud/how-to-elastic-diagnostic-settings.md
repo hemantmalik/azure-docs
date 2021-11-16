@@ -146,4 +146,4 @@ Kibana allows you to visualize  data with Dasbhoards and a rich ecosystem of vis
 ## Next steps
 
 * [Quickstart: Deploy your first Spring Boot app in Azure Spring Cloud](./quickstart.md)
-* [Deploy Elastic on Azure]()
+* [Deploy Elastic on Azure](https://www.elastic.co/blog/getting-started-with-the-azure-integration-enhancement)
