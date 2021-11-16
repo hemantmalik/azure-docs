@@ -119,12 +119,23 @@ az spring-cloud app deploy --name ${VISITS_SERVICE} \
    
    ![Open Kibana from Azure](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/get-kibana-link.png)
 
-2. Once Kibana is open, search for APM in the search bar and go to APM.
+2. Once Kibana is open, search for APM in the search bar and click on APM.
    
    ![Open APM in Kibana](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/go-to-apm-kibana.PNG)
 
-3.
+3. Kibana APM is the curated application to support Application Monitoring workflows. Here you can view high-level details such as request/response times, throughput, transactions in a service with most impact on the duration.
+
 ![Kibana APM](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/elastic-apm-customer-service.png)
+
+5. You can drill down in a specific transaction to understand the a transaction specific details such as the distributed tracing.
+
 ![Kibana APM Latency Distribution](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/elastic-apm-customer-service-latency-distribution.png)
+
+7. Elastic APM Java agent also captures the JVM metrics from the Azure Spring Cloud apps that are visualized by the Kibana APM.
+
 ![Kibana APM Machine Learning](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/elastic-apm-customer-service-anomaly.png)
+
+9. Using the inbuilt AI engine in the Elastic solution, you can also enable Anomaly Detection on the Azure Spring Cloud Services and choose an appropriate notification mechanism - such as Teams notification or a webhook based API call. 
+
 ![Kibana APM JVM Metrics](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/elastic-apm-customer-service-jvm-metrics.png)
+
