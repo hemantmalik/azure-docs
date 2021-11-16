@@ -139,3 +139,7 @@ az spring-cloud app deploy --name ${VISITS_SERVICE} \
 
 ![Kibana APM JVM Metrics](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/elastic-apm-customer-service-jvm-metrics.png)
 
+## Next steps
+
+* [Quickstart: Deploy your first Spring Boot app in Azure Spring Cloud](./quickstart.md)
+* [Deploy Elastic on Azure](https://www.elastic.co/blog/getting-started-with-the-azure-integration-enhancement)
