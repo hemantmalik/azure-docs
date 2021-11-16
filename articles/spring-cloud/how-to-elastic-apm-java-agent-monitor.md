@@ -40,7 +40,7 @@ The following sections use Spring Petclinic service as an example to walk throug
 ### Enable custom persistent storage for  Azure Spring Cloud service
 1. Follow the steps [here ](https://docs.microsoft.com/en-us/azure/spring-cloud/how-to-custom-persistent-storage) to enable your custom persistent storage.
 2. For Step 3 in the above documentation follow the below steps to add persistent storage for Petclinic apps.
-   ```bash
+   ```azurecli
    #API_Gateway
    az spring-cloud app append-persistent-storage --persistent-storage-type AzureFileVolume --share-name asc-elastic --mount-path "/elastic/apm/api-gateway" --storage-name "asc-elastic-storage" -n ${API_GATEWAY} -g ${RESOURCE_GROUP} -s ${SPRING_CLOUD_SERVICE}
    
@@ -71,7 +71,7 @@ The following sections use Spring Petclinic service as an example to walk throug
 
 4. Once you have the Elastic APM endpoint and secret token, follow the following commands to deploy the applications. Replace the Elastic APM Server URL and Secret Token with your values.
 
-```bash
+```azurecli
 #API_GATEWAY
 az  spring-cloud app deploy --name ${API_GATEWAY} \
        --artifact-path ${API_GATEWAY_JAR} \
