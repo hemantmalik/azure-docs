@@ -23,7 +23,7 @@ Using the diagnostics functionality of Azure Spring Cloud, you can analyze logs 
 3. Enter a name for the setting, and then choose **Send to partner solution** , select **Elastic** and an Elastic deployment where you want to send the logs.
 4. Select **Save**.
 
-![Diagnostics Setting](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/diagnostic-settings-asc-2.png)
+   ![Diagnostics Setting](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/diagnostic-settings-asc-2.png)
 
 > [!NOTE]
 > 1. There might be a gap of up to 15 minutes between when logs  are emitted and when they appear in your Elastic deployment.
@@ -35,15 +35,15 @@ To learn more about deploying Elastic on Azure, see [How to deploy and manage El
 
 1. From the Elastic deployment overview page in the Azure portal, open **Kibana**.
 
-![Deployment Overview](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/elastic-on-azure-native-Microsoft-Azure.png)
+   ![Deployment Overview](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/elastic-on-azure-native-Microsoft-Azure.png)
 
 3. In Kibana in the Search bar at top type **Spring Cloud type:dashboard**
 
-![Kibana Search](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/elastic-kibana-spring-cloud-dashboard.PNG)
+   ![Kibana Search](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/elastic-kibana-spring-cloud-dashboard.PNG)
 
 5. Click on the **[Logs Azure] Azure Spring Cloud logs Overview** from the results
 
-![ASC Dashboard](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/Kibana_Visual.PNG)
+   ![ASC Dashboard](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/elastic-kibana-asc-dashboard-full.png)
 
 7. You can search on out of the box Azure Spring Cloud dashboards by using the queries such as
 
