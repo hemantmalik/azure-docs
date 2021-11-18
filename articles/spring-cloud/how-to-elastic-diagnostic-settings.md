@@ -23,7 +23,7 @@ Using the diagnostics functionality of Azure Spring Cloud, you can analyze logs 
 3. Enter a name for the setting, and then choose **Send to partner solution** , select **Elastic** and an Elastic deployment where you want to send the logs.
 4. Select **Save**.
 
-![Diagnostics Setting](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/elastic-diagnostic-setting.png)
+![Diagnostics Setting](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/diagnostic-settings-asc.png)
 
 > [!NOTE]
 > 1. There might be a gap of up to 15 minutes between when logs  are emitted and when they appear in your Elastic deployment.
@@ -39,7 +39,7 @@ To learn more about deploying Elastic on Azure, see [How to deploy and manage El
 
 3. In Kibana in the Search bar at top type **Spring Cloud type:dashboard**
 
-![Kibana Search](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/spring-cloud-dashboard-search.png)
+![Kibana Search](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/elastic-kibana-spring-cloud-dashboard.PNG)
 
 5. Click on the **[Logs Azure] Azure Spring Cloud logs Overview** from the results
 
@@ -57,7 +57,7 @@ Application logs provide critical information and verbose logs about your applic
 
 1. In Kibana in the Search bar at top type **Disover**, and click on the result 
 
-   ![Elastic Kibana Discover](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/elastic-discover.png)
+   ![Elastic Kibana Discover](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/elastic-kibana-go-discover.png)
 
 2. In **Discover** app select **logs-** index pattern if it's not already selected. 
 
