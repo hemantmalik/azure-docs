@@ -16,14 +16,6 @@ ms.custom: devx-track-java
 Using the diagnostics functionality of Azure Spring Cloud, you can analyze logs with Elastic (ELK).
 
 
-## Supported Log types from Azure Spring Cloud
-
-|Log | Description |
-|----|----|
-| **ApplicationConsole** | Console log of all customer applications. |
-| **SystemLogs** | Currently, only [Spring Cloud Config Server](https://cloud.spring.io/spring-cloud-config/reference/html/#_spring_cloud_config_server) logs in this category. |
-
-
 ## Configure diagnostics settings
 
 1. In the Azure portal, go to your Azure Spring Cloud instance.
