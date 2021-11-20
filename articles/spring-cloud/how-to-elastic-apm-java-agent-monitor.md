@@ -80,7 +80,7 @@ The following sections use Spring Petclinic service as an example to walk throug
 
 6. Upload Elastic APM Agent to custom persistent storage  enabled earlier. Go to Azure Fileshare and click on *Upload* to add the agent jar file. 
 
-![Download Elastic APM Agent](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/Upload-files-Microsoft-Azure.png)
+   ![Download Elastic APM Agent](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/Upload-files-Microsoft-Azure.png)
 
 8. Once you have the Elastic APM endpoint and secret token, follow the following commands to deploy the applications. Replace the Elastic APM Server URL and Secret Token with your values.
 
