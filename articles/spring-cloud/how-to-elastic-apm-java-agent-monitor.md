@@ -68,7 +68,7 @@ The following sections use Spring Petclinic service as an example to walk throug
 
 2. From Azure Portal, click on the **Manage Elastic Cloud Deployment** on the *Overview* blade  of your Elastic Deployment.
    
-   ![Go to Elastic Cloud ](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/azure-portal-elastic-deployment-link.png)
+   ![Go to Elastic Cloud ](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/elastic-apm-get-link-from-Microsoft-Azure.png)
    
 3. Under your deployment on Elastic Cloud Console, click on APM & Fleet section to get Elastic APM Server endpoint and secret token
 
@@ -76,11 +76,11 @@ The following sections use Spring Petclinic service as an example to walk throug
 
 4. Download Elastic APM Java Agent from [Maven Central](https://search.maven.org/search?q=g:co.elastic.apm%20AND%20a:elastic-apm-agent)
 
-   ![Download Elastic APM Agent](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/get-apm-endpoint-token-2.png)
+   ![Download Elastic APM Agent](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/Maven-Central-Repository-Search.png)
 
-6. Upload Elastic APM Agent to custom persistent storage you enabled earlier. Go to Azure Fileshare and click on Upload to add the agent jar file. 
+6. Upload Elastic APM Agent to custom persistent storage  enabled earlier. Go to Azure Fileshare and click on *Upload* to add the agent jar file. 
 
-![Download Elastic APM Agent](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/get-apm-endpoint-token-2.png)
+![Download Elastic APM Agent](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/Upload-files-Microsoft-Azure.png)
 
 8. Once you have the Elastic APM endpoint and secret token, follow the following commands to deploy the applications. Replace the Elastic APM Server URL and Secret Token with your values.
 
