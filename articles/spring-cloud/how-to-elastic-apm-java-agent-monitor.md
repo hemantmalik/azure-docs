@@ -28,7 +28,7 @@ With the Elastic Observability Solution you can achieve unified observability fo
 
 * [Azure CLI](/cli/azure/install-azure-cli)
 * [Deploy Elastic on Azure](https://www.elastic.co/blog/getting-started-with-the-azure-integration-enhancement)
-* Elastic APM Endpoint and Secret Token from the Elastic Deployment ](https://www.elastic.co/guide/en/cloud/current/ec-manage-apm-and-fleet.html)
+* [Elastic APM Endpoint and Secret Token from the Elastic Deployment](https://www.elastic.co/guide/en/cloud/current/ec-manage-apm-and-fleet.html)
 
 ## Monitor Azure Spring Cloud Applications using Elastic APM
 
@@ -36,32 +36,37 @@ The following sections use Spring Petclinic service as an example to walk throug
 
 ### Deploy Spring Petclinic Application
 1. Follow the guide [here](https://github.com/Azure-Samples/spring-petclinic-microservices) to deploy Microservices based Spring Petclinic application to Azure Spring Cloud. Follow this guide until the [Deploy Spring Boot applications and set environment variables](https://github.com/Azure-Samples/spring-petclinic-microservices#deploy-spring-boot-applications-and-set-environment-variables) step.
+
+   You can use the Azure Spring Cloud extenstion for Azure CLI to create an Azure Spring Cloud application using CLI
+   ```azurecli
+   az spring-cloud app create \
+      --resource-group "<your-resource-group-name>" \
+      --service "<your-Azure-Spring-Cloud-instance-name>" \
+      --name "<your-spring-app-name>" \
+      --is-public true
+      ```
    
 ### Enable custom persistent storage for  Azure Spring Cloud service
 1. Follow the steps [here ](https://docs.microsoft.com/en-us/azure/spring-cloud/how-to-custom-persistent-storage) to enable your custom persistent storage.
-2. For Step 3 in the above documentation follow the below steps to add persistent storage for Petclinic apps.
-   ```azurecli
-   #API_Gateway
-   az spring-cloud app append-persistent-storage --persistent-storage-type AzureFileVolume --share-name asc-elastic --mount-path "/elastic/apm/api-gateway" --storage-name "asc-elastic-storage" -n ${API_GATEWAY} -g ${RESOURCE_GROUP} -s ${SPRING_CLOUD_SERVICE}
-   
-   #ADMIN_SERVER
-   az spring-cloud app append-persistent-storage --persistent-storage-type AzureFileVolume --share-name asc-elastic --mount-path "/elastic/apm/admin-server" --storage-name "asc-elastic-storage" -n ${ADMIN_SERVER} -g ${RESOURCE_GROUP} -s ${SPRING_CLOUD_SERVICE}
-   
-   #CUSTOMERS_SERVICE
-   az spring-cloud app append-persistent-storage --persistent-storage-type AzureFileVolume --share-name asc-elastic --mount-path "/elastic/apm/customers-service" --storage-name "asc-elastic-storage" -n ${CUSTOMERS_SERVICE} -g ${RESOURCE_GROUP} -s ${SPRING_CLOUD_SERVICE}
-   
-   #VETS_SERVICE
-   az spring-cloud app append-persistent-storage --persistent-storage-type AzureFileVolume --share-name asc-elastic --mount-path "/elastic/apm/vets-service" --storage-name "asc-elastic-storage" -n ${VETS_SERVICE} -g ${RESOURCE_GROUP} -s ${SPRING_CLOUD_SERVICE}
-   
-   #VISITS_SERVICE
-   az spring-cloud app append-persistent-storage --persistent-storage-type AzureFileVolume --share-name asc-elastic --mount-path "/elastic/apm/visits-service" --storage-name "asc-elastic-storage" -n ${VISITS_SERVICE} -g ${RESOURCE_GROUP} -s ${SPRING_CLOUD_SERVICE}```
 
+3. You can use the following Azure CLI command to add persistent storage for your Azure Spring Cloud apps.
+
+   ```azurecli
+   az spring-cloud app append-persistent-storage \
+      --persistent-storage-type AzureFileVolume \
+      --share-name <your-azure-fileshare-name> \
+      --mount-path <unique-mount-path> \
+      --storage-name <your-mounted-storage-name> \
+      -n <your-azure-spring-cloud-app-name> \
+      -g <your-resource-group-name> \
+      -s <your-azure-spring-cloud-service-name>
+      ```
 
 ### Activate Elastic APM Java Agent
 
-1. Before proceeding ahead you would need Elastic APM server connectivity information handy. This assumes you have completed  [Deployment of Elastic on Azure](https://www.elastic.co/blog/getting-started-with-the-azure-integration-enhancement).
+1. Before proceeding ahead you would need Elastic APM server connectivity information handy. This assumes you have   [deployed Elastic on Azure](https://www.elastic.co/blog/getting-started-with-the-azure-integration-enhancement).
 
-2. From Azure Portal, click on the Manage Elastic Cloud Deployment on the Overview blade  of your Elastic Deployment.
+2. From Azure Portal, click on the **Manage Elastic Cloud Deployment** on the *Overview* blade  of your Elastic Deployment.
    
    ![Go to Elastic Cloud ](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/azure-portal-elastic-deployment-link.png)
    
@@ -69,7 +74,15 @@ The following sections use Spring Petclinic service as an example to walk throug
 
    ![Elastic Cloud - Get APM Endpoint and token ](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/get-apm-endpoint-token-2.png)
 
-4. Once you have the Elastic APM endpoint and secret token, follow the following commands to deploy the applications. Replace the Elastic APM Server URL and Secret Token with your values.
+4. Download Elastic APM Java Agent from [Maven Central](https://search.maven.org/search?q=g:co.elastic.apm%20AND%20a:elastic-apm-agent)
+
+   ![Download Elastic APM Agent](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/get-apm-endpoint-token-2.png)
+
+6. Upload Elastic APM Agent to custom persistent storage you enabled earlier. Go to Azure Fileshare and click on Upload to add the agent jar file. 
+
+![Download Elastic APM Agent](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/get-apm-endpoint-token-2.png)
+
+8. Once you have the Elastic APM endpoint and secret token, follow the following commands to deploy the applications. Replace the Elastic APM Server URL and Secret Token with your values.
 
 ```azurecli
 #API_GATEWAY
