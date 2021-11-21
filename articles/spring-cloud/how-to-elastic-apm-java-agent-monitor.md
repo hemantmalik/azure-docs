@@ -72,7 +72,7 @@ The following sections use Spring Petclinic service as an example to walk throug
    
 3. Under your deployment on Elastic Cloud Console, click on APM & Fleet section to get Elastic APM Server endpoint and secret token
 
-   ![Elastic Cloud - Get APM Endpoint and token ](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/get-apm-endpoint-token-2.png)
+   ![Elastic Cloud - Get APM Endpoint and token ](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/elastic-apm-endpoint-secret.png)
 
 4. Download Elastic APM Java Agent from [Maven Central](https://search.maven.org/search?q=g:co.elastic.apm%20AND%20a:elastic-apm-agent)
 
@@ -114,7 +114,7 @@ az  spring-cloud app deploy --name <your-app-name> \
 
 9. Using the inbuilt AI engine in the Elastic solution, you can also enable Anomaly Detection on the Azure Spring Cloud Services and choose an appropriate action  - such as Teams notification, creation of a JIRA issue, a webhook based API call and others. 
 
-   ![Kibana APM Machine Learning](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/elastic-apm-customer-service-anomaly.png)
+   ![Kibana APM Machine Learning](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/elastic-apm-alert-anomaly.png)
 
 
 ## Next steps
