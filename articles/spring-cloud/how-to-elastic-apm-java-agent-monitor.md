@@ -82,48 +82,12 @@ The following sections use Spring Petclinic service as an example to walk throug
 
    ![Download Elastic APM Agent](https://github.com/hemantmalik/azure-docs/blob/master/articles/spring-cloud/media/Upload-files-Microsoft-Azure.png)
 
-8. Once you have the Elastic APM endpoint and secret token, follow the following commands to deploy the applications. Replace the Elastic APM Server URL and Secret Token with your values.
+8. Once you have the Elastic APM endpoint and secret token, you can use following Azure CLI command to activate Elastic APM Java agent when deploying applications.
 
 ```azurecli
-#API_GATEWAY
-az  spring-cloud app deploy --name ${API_GATEWAY} \
-       --artifact-path ${API_GATEWAY_JAR} \
-        --jvm-options='-Xms2048m -Xmx2048m -Dspring.profiles.active=mysql -javaagent:/elastic/apm/api-gateway/elastic-apm-agent-1.26.0.jar  -Delastic.apm.service_name=API_GATEWAY -Delastic.apm.application_packages=org.springframework.samples.petclinic  -Delastic.apm.server_url=<replace-with-your-Elastic-APM-server-url> -Delastic.apm.secret_token=<replace-with-your-Elastic-APM-secret-token>'
-
-
-#ADMIN_SERVER
-az spring-cloud app deploy --name ${ADMIN_SERVER} \
-        --artifact-path ${ADMIN_SERVER_JAR} \
-        --jvm-options='-Xms2048m -Xmx2048m -Dspring.profiles.active=mysql -javaagent:/elastic/apm/admin-server/elastic-apm-agent-1.26.0.jar  -Delastic.apm.service_name=ADMIN-SERVER -Delastic.apm.application_packages=org.springframework.samples.petclinic  -Delastic.apm.server_url=<replace-with-your-Elastic-APM-server-url> -Delastic.apm.secret_token=<replace-with-your-Elastic-APM-secret-token>'
-
-
-#CUSTOMERS_SERVICE
-az spring-cloud app deploy --name ${CUSTOMERS_SERVICE} \
-   --artifact-path ${CUSTOMERS_SERVICE_JAR} \
-   --jvm-options='-Xms2048m -Xmx2048m -Dspring.profiles.active=mysql -javaagent:/elastic/apm/customers-service/elastic-apm-agent-1.26.0.jar  -Delastic.apm.service_name=CUSTOMERS-SERVICE -Delastic.apm.application_packages=org.springframework.samples.petclinic  -Delastic.apm.server_url=<replace-with-your-Elastic-APM-server-url> -Delastic.apm.secret_token=<replace-with-your-Elastic-APM-secret-token>' \
-   --env MYSQL_SERVER_FULL_NAME=${MYSQL_SERVER_FULL_NAME} \
-         MYSQL_DATABASE_NAME=${MYSQL_DATABASE_NAME} \
-         MYSQL_SERVER_ADMIN_LOGIN_NAME=${MYSQL_SERVER_ADMIN_LOGIN_NAME} \
-         MYSQL_SERVER_ADMIN_PASSWORD=${MYSQL_SERVER_ADMIN_PASSWORD}
-    
-#VETS_SERVICE
-az spring-cloud app deploy --name ${VETS_SERVICE} \
-   --artifact-path ${VETS_SERVICE_JAR} \
-   --jvm-options='-Xms2048m -Xmx2048m -Dspring.profiles.active=mysql -javaagent:/elastic/apm/vets-service/elastic-apm-agent-1.26.0.jar  -Delastic.apm.service_name=VETS-SERVICE -Delastic.apm.application_packages=org.springframework.samples.petclinic  -Delastic.apm.server_url=<replace-with-your-Elastic-APM-server-url> -Delastic.apm.secret_token=<replace-with-your-Elastic-APM-secret-token>' \
-   --env MYSQL_SERVER_FULL_NAME=${MYSQL_SERVER_FULL_NAME} \
-         MYSQL_DATABASE_NAME=${MYSQL_DATABASE_NAME} \
-         MYSQL_SERVER_ADMIN_LOGIN_NAME=${MYSQL_SERVER_ADMIN_LOGIN_NAME} \
-         MYSQL_SERVER_ADMIN_PASSWORD=${MYSQL_SERVER_ADMIN_PASSWORD}
-              
-#VISITS_SERVICE
-az spring-cloud app deploy --name ${VISITS_SERVICE} \
-   --artifact-path ${VISITS_SERVICE_JAR} \
-   --jvm-options='-Xms2048m -Xmx2048m -Dspring.profiles.active=mysql -javaagent:/elastic/apm/visits-service/elastic-apm-agent-1.26.0.jar  -Delastic.apm.service_name=VISITS-SERVICE -Delastic.apm.application_packages=org.springframework.samples.petclinic  -Delastic.apm.server_url=<replace-with-your-Elastic-APM-server-url> -Delastic.apm.secret_token=<replace-with-your-Elastic-APM-secret-token>' \
-   --env MYSQL_SERVER_FULL_NAME=${MYSQL_SERVER_FULL_NAME} \
-         MYSQL_DATABASE_NAME=${MYSQL_DATABASE_NAME} \
-         MYSQL_SERVER_ADMIN_LOGIN_NAME=${MYSQL_SERVER_ADMIN_LOGIN_NAME} \
-         MYSQL_SERVER_ADMIN_PASSWORD=${MYSQL_SERVER_ADMIN_PASSWORD}
-
+az  spring-cloud app deploy --name <your-app-name> \
+       --artifact-path <your-app-jar> \
+        --jvm-options='-Xms2048m -Xmx2048m -Dspring.profiles.active=mysql -javaagent:<elastic-apm-java-agent-location-from-mounted-storage>  -Delastic.apm.service_name=<your-app-name> -Delastic.apm.application_packages=<your-app-package-name>  -Delastic.apm.server_url=<replace-with-your-Elastic-APM-server-url> -Delastic.apm.secret_token=<replace-with-your-Elastic-APM-secret-token>'
 ```
 
 ### Monitoring Applications and metrics with Elastic APM
