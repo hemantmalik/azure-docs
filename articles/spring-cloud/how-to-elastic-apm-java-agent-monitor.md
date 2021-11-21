@@ -86,8 +86,8 @@ The following sections use Spring Petclinic service as an example to walk throug
 
 ```azurecli
 az  spring-cloud app deploy --name <your-app-name> \
-       --artifact-path <your-app-jar> \
-        --jvm-options='-Xms2048m -Xmx2048m -Dspring.profiles.active=mysql -javaagent:<elastic-apm-java-agent-location-from-mounted-storage>  -Delastic.apm.service_name=<your-app-name> -Delastic.apm.application_packages=<your-app-package-name>  -Delastic.apm.server_url=<replace-with-your-Elastic-APM-server-url> -Delastic.apm.secret_token=<replace-with-your-Elastic-APM-secret-token>'
+    --artifact-path <your-app-jar> \
+    --jvm-options='-Xms2048m -Xmx2048m -Dspring.profiles.active=mysql -javaagent:<elastic-apm-java-agent-location-from-mounted-storage>  -Delastic.apm.service_name=<your-app-name> -Delastic.apm.application_packages=<your-app-package-name>  -Delastic.apm.server_url=<replace-with-your-Elastic-APM-server-url> -Delastic.apm.secret_token=<replace-with-your-Elastic-APM-secret-token>'
 ```
 
 ### Monitoring Applications and metrics with Elastic APM
