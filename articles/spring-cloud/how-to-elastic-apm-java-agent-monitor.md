@@ -86,10 +86,47 @@ The following sections use Spring Petclinic service as an example to walk throug
 
 ```azurecli
 az  spring-cloud app deploy --name <your-app-name> \
-    --artifact-path <your-app-jar> \
+    --artifact-path <unique-path-to-your-app-jar-on-custom-storage> \
     --jvm-options='-Xms2048m -Xmx2048m -Dspring.profiles.active=mysql -javaagent:<elastic-apm-java-agent-location-from-mounted-storage>  -Delastic.apm.service_name=<your-app-name> -Delastic.apm.application_packages=<your-app-package-name>  -Delastic.apm.server_url=<replace-with-your-Elastic-APM-server-url> -Delastic.apm.secret_token=<replace-with-your-Elastic-APM-secret-token>'
 ```
+### Automate provisioning
 
+You can also run a provisioning automation pipeline using Terraform or an Azure Resource Manager template (ARM template). This pipeline can provide a complete hands-off experience to instrument and monitor any new applications that you create and deploy.
+
+#### Automate provisioning using Terraform
+
+To configure the environment variables in a Terraform template, add the following code to the template, replacing the *\<...>* placeholders with your own values. For more information, see [Manages an Active Azure Spring Cloud Deployment](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/spring_cloud_active_deployment).
+
+```terraform
+resource "azurerm_spring_cloud_java_deployment" "example" {
+  ...
+  jvm_options = "-javaagent:<unique-path-to-your-app-jar-on-custom-storage>"
+  ...
+    environment_variables = {
+      "ELASTIC_APM_SERVICE_NAME"="<your-app-name>",
+      "ELASTIC_APM_APPLICATION_PACKAGES"="<your-app-package-name>",
+      "ELASTIC_APM_SERVER_URL"="<replace-with-your-Elastic-APM-server-url>",
+      "ELASTIC_APM_SECRET_TOKEN"="<replace-with-your-Elastic-APM-secret-token>"
+  }
+}
+```
+
+### Automate provisioning using an ARM template
+
+To configure the environment variables in an ARM template, add the following code to the template, replacing the *\<...>* placeholders with your own values. For more information, see [Microsoft.AppPlatform Spring/apps/deployments](/azure/templates/microsoft.appplatform/spring/apps/deployments?tabs=json).
+
+```ARM template
+"deploymentSettings": {
+  "environmentVariables": {
+    "ELASTIC_APM_SERVICE_NAME"="<your-app-name>",
+    "ELASTIC_APM_APPLICATION_PACKAGES"="<your-app-package-name>",
+    "ELASTIC_APM_SERVER_URL"="<replace-with-your-Elastic-APM-server-url>",
+    "ELASTIC_APM_SECRET_TOKEN"="<replace-with-your-Elastic-APM-secret-token>"
+  },
+  "jvmOptions": "-javaagent:<unique-path-to-your-app-jar-on-custom-storage>",
+  ...
+}
+```
 ### Monitoring Applications and metrics with Elastic APM
 
 1. From the Azure Portal, click on Kibana link from the overview blade of Elastic Deployment to open Kibana. 
