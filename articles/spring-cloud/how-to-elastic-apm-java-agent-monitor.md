@@ -87,7 +87,11 @@ The following sections use Spring Petclinic service as an example to walk throug
 ```azurecli
 az  spring-cloud app deploy --name <your-app-name> \
     --artifact-path <unique-path-to-your-app-jar-on-custom-storage> \
-    --jvm-options='-Xms2048m -Xmx2048m -Dspring.profiles.active=mysql -javaagent:<elastic-apm-java-agent-location-from-mounted-storage>  -Delastic.apm.service_name=<your-app-name> -Delastic.apm.application_packages=<your-app-package-name>  -Delastic.apm.server_url=<replace-with-your-Elastic-APM-server-url> -Delastic.apm.secret_token=<replace-with-your-Elastic-APM-secret-token>'
+    --jvm-options='-Xms2048m -Xmx2048m -Dspring.profiles.active=mysql -javaagent:<elastic-apm-java-agent-location-from-mounted-storage>' \
+    --env ELASTIC_APM_SERVICE_NAME=<your-app-name> \
+          ELASTIC_APM_APPLICATION_PACKAGES='<your-app-package-name>' \
+          ELASTIC_APM_SERVER_URL='<replace-with-your-Elastic-APM-server-url>' \
+          ELASTIC_APM_SECRET_TOKEN='<replace-with-your-Elastic-APM-secret-token>'
 ```
 ### Automate provisioning
 
@@ -104,7 +108,7 @@ resource "azurerm_spring_cloud_java_deployment" "example" {
   ...
     environment_variables = {
       "ELASTIC_APM_SERVICE_NAME"="<your-app-name>",
-      "ELASTIC_APM_APPLICATION_PACKAGES"="<your-app-package-name>",
+      "ELASTIC_APM_APPLICATION_PACKAGES"="<your-app-package>",
       "ELASTIC_APM_SERVER_URL"="<replace-with-your-Elastic-APM-server-url>",
       "ELASTIC_APM_SECRET_TOKEN"="<replace-with-your-Elastic-APM-secret-token>"
   }
@@ -119,7 +123,7 @@ To configure the environment variables in an ARM template, add the following cod
 "deploymentSettings": {
   "environmentVariables": {
     "ELASTIC_APM_SERVICE_NAME"="<your-app-name>",
-    "ELASTIC_APM_APPLICATION_PACKAGES"="<your-app-package-name>",
+    "ELASTIC_APM_APPLICATION_PACKAGES"="<your-app-package>",
     "ELASTIC_APM_SERVER_URL"="<replace-with-your-Elastic-APM-server-url>",
     "ELASTIC_APM_SECRET_TOKEN"="<replace-with-your-Elastic-APM-secret-token>"
   },
