@@ -115,7 +115,7 @@ resource "azurerm_spring_cloud_java_deployment" "example" {
 }
 ```
 
-### Automate provisioning using an ARM template
+#### Automate provisioning using an ARM template
 
 To configure the environment variables in an ARM template, add the following code to the template, replacing the *\<...>* placeholders with your own values. For more information, see [Microsoft.AppPlatform Spring/apps/deployments](/azure/templates/microsoft.appplatform/spring/apps/deployments?tabs=json).
 
@@ -131,6 +131,10 @@ To configure the environment variables in an ARM template, add the following cod
   ...
 }
 ```
+### Upgrading Elastic APM Java Agent
+
+Refer to documentation for [Upgrade versions](https://www.elastic.co/guide/en/cloud/current/ec-upgrade-deployment.html) for Elastic Cloud on Azure. [Breaking Changes](https://www.elastic.co/guide/en/apm/server/current/breaking-changes.html) for APM is another good starting point for planning your upgrade.
+
 ### Monitoring Applications and metrics with Elastic APM
 
 1. From the Azure Portal, click on Kibana link from the overview blade of Elastic Deployment to open Kibana. 
