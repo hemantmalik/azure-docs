@@ -133,7 +133,7 @@ To configure the environment variables in an ARM template, add the following cod
 ```
 ### Upgrading Elastic APM Java Agent
 
-Refer to documentation for [Upgrade versions](https://www.elastic.co/guide/en/cloud/current/ec-upgrade-deployment.html) for Elastic Cloud on Azure. [Breaking Changes](https://www.elastic.co/guide/en/apm/server/current/breaking-changes.html) for APM is another good starting point for planning your upgrade. Once APM Server is upgraded, users will need to update the Elastic APM Java agent jar file in the custom persistent storage and deploy apps with upgraded Elastic APM Java agent jar. 
+Refer to documentation for [Upgrade versions](https://www.elastic.co/guide/en/cloud/current/ec-upgrade-deployment.html) for Elastic Cloud on Azure. [Breaking Changes](https://www.elastic.co/guide/en/apm/server/current/breaking-changes.html) for APM is another good starting point for planning your upgrade. Once APM Server is upgraded, you will upload the Elastic APM Java agent jar file in the custom persistent storage and restart apps with updated jvm options pointing to upgraded Elastic APM Java agent jar. 
 
 ### Monitoring Applications and metrics with Elastic APM
 
